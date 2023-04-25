@@ -1,14 +1,11 @@
 1. Describe the Problem
 Put or write the user story here. Add any clarifying notes you might have.
 
-<!-- As a user
-So that I can manage my time
-I want to see an estimate of reading time for a text, assuming that I can read 200 words a minute. -->
-the user wants to be able to see a estimation for how long it would ake to read a piece of text, given that they can read 200 words a minute
-200 words per 60 seconds
-so a text of 100 words should take 30 seconds to read through
-400words in 2 mins aka 120secs (2 * 60)
-
+As a user
+So that I can improve my grammar
+I want to verify that a text starts with a capital letter and ends with a suitable sentence-ending punctuation mark.
+- check if starts with capital (first index)
+- check for suitable punctuation (last index)
 
 2. Design the Function Signature
 Include the name of the function, its parameters, return value, and side effects.
@@ -17,15 +14,13 @@ Include the name of the function, its parameters, return value, and side effects
 - Side effects: (state any side effects)
 
 <!-- function name: -->
-# read_time_estimate
+grammer_checker
 <!-- parameters -->
-# should take a piece of text as a string
-# should take a known wpm from the user as an integer
-e.g. read_time_estimate(text, wpm):
+grammer_checker(text)
 <!-- returns -->
-# should return an eestimated reading time in minutes as an integer.
+should return True or False for capital and punctuation.
 <!-- side effects -->
-# the function doest print anything, just returns a value
+this function will return a boolean and not print anything.
 
 
 
@@ -40,20 +35,14 @@ It returns a list with the uppercase word
 extract_uppercase("hello WORLD") => ["WORLD"]
 
 <!-- example test -->
-Given a text and wpm
-it returns a piece of text
+Given a piece of text, test for capital letter in text
+grammer_checker("Hello world") => True
 
-Given a piece of text and a wpm integer
-it returns an f"string" as a time estimation
-"""
-read_time_estimate("This is my piece of text", 1) => This will take 6 minutes to read
-"""
+Given a piece of text, test for punctuation in text
+grammer_checker("Hello world!") => True
 
-Given an integer as text
-It returns an error msg
-""""
-read_time_estimate(15, 2) => "You have not entered any text"
-
+given a number, test should return an error message
+grammer_checker(25) => "Enter a string"
 
 
 4. Implement the Behaviour
