@@ -2,10 +2,9 @@
 Put or write the user story here. Add any clarifying notes you might have.
 
 As a user
-So that I can improve my grammar
-I want to verify that a text starts with a capital letter and ends with a suitable sentence-ending punctuation mark.
-- check if starts with capital (first index)
-- check for suitable punctuation (last index)
+So that I can keep track of my tasks
+I want to check if a text includes the string #TODO.
+check for # & uppercase
 
 2. Design the Function Signature
 Include the name of the function, its parameters, return value, and side effects.
@@ -14,13 +13,13 @@ Include the name of the function, its parameters, return value, and side effects
 - Side effects: (state any side effects)
 
 <!-- function name: -->
-grammer_checker
+task_includes()
 <!-- parameters -->
-grammer_checker(text)
+- string representing the user's task
 <!-- returns -->
-should return True or False for capital and punctuation.
+Boolean (True if successful) otherwise false 
 <!-- side effects -->
-this function will return a boolean and not print anything.
+Should return Boolean, will not print anything
 
 
 
@@ -35,14 +34,9 @@ It returns a list with the uppercase word
 extract_uppercase("hello WORLD") => ["WORLD"]
 
 <!-- example test -->
-Given a piece of text, test for capital letter in text
-grammer_checker("Hello world") => True
+task_includes("#task") -> True (INCLUDES HASHTAG)
+task_includes("#TASK) -> TRUE (uppercase)
 
-Given a piece of text, test for punctuation in text
-grammer_checker("Hello world!") => True
-
-given a number, test should return an error message
-grammer_checker(25) => "Enter a string"
 
 
 4. Implement the Behaviour
